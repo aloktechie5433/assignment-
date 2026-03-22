@@ -24,7 +24,7 @@ public:
              << "\n----------------------\n";
     }
 
-    // For file saving
+    
     string toFileString() const {
         return to_string(id) + "|" + title + "|" + subject + "|" + deadline + "|" + (completed ? "1" : "0");
     }
