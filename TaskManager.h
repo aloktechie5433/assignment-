@@ -1,42 +1,19 @@
-#ifndef TASKMANAGER_H
-#define TASKMANAGER_H
-
+#pragma once
 #include <vector>
-#include "Assignment.h"
+#include <string>
+#include "Task.h"
+#include "FileStorage.h"
 
-class FileStorage; // forward declaration
+using namespace std;
 
 class TaskManager {
+    friend class FileStorage;
 private:
     vector<Assignment> assignments;
 
 public:
-    void addAssignment(const Assignment& a) {
-        assignments.push_back(a);
-    }
-
-    void listAssignments() const {
-        for (const auto& a : assignments) {
-            a.display();
-        }
-    }
-
-    void markAssignmentComplete(int id) {
-        for (auto& a : assignments) {
-            if (a.getId() == id) {
-                a.markComplete();
-                cout << "Marked as completed!\n";
-                return;
-            }
-        }
-        cout << "Assignment not found!\n";
-    }
-
-    vector<Assignment>& getAssignments() {
-        return assignments;
-    }
-
-    friend class FileStorage;
+    void addAssignment(Assignment a);
+    void listAssignments();
+    void markComplete(int id);
+    void deleteAssignment(int id); 
 };
-
-#endif

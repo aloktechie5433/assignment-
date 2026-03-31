@@ -42,7 +42,7 @@ int main() {
             int id;
             cout << "Enter ID: ";
             cin >> id;
-            manager.markAssignmentComplete(id);
+            manager.markComplete(id);
         }
         else if (choice == 4) {
             storage.saveAssignments(manager);
