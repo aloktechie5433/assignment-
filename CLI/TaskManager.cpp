@@ -3,11 +3,8 @@
 
 using namespace std;
 
-
 void TaskManager::addAssignment(Assignment a) {
     assignments.push_back(a);
-}
-
 
 void TaskManager::listAssignments() {
     for (auto &a : assignments) {

@@ -27,7 +27,9 @@ void FileStorage::loadAssignments(TaskManager& manager) {
 
         Assignment a(stoi(id), title, subject, deadline);
 
-        if (completed == "1") a.setCompleted(true);
+        if (completed == "1") {
+            a.setCompleted(true);
+        }
 
         manager.addAssignment(a);
     }
